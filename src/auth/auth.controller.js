@@ -54,7 +54,7 @@ export const login = async (req, res) => {
             message: 'login successful',
             adminDetails: {
                 token: token,
-                profilePicture: admin.profilePicture,
+                profilePicture: admin.profilePicture
             }
         })
     } catch (err) {

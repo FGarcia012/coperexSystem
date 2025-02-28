@@ -1,12 +1,12 @@
 import jwt from "jsonwebtoken"
 
-export const generateJWT = (uid = " ") => {
+export const generateJWT = (aid = " ") => {
     return new Promise((resolve, reject) => {
-        const payload = { uid }
+        const payload = { aid }
 
         jwt.sign(
             payload,
-            process.env.SECRETORPRIVATEKEY,
+            process.env.SECRETORPRIVATEKEY, 
             {
                 expiresIn: "1h"
             },
@@ -14,9 +14,9 @@ export const generateJWT = (uid = " ") => {
                 if (err) {
                     reject({
                         success: false,
-                        message: err
+                        message: err.message
                     })
-                }else{
+                } else {
                     resolve(token)
                 }
             }
