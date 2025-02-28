@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "67c1e3be39aa68f9f2d3d066"
+  },
+  "name": "Nuevo Nombre",
+  "manager": "Nuevo Manager",
+  "impactLevel": "Nuevo Impact Level",
+  "yearsOfExperience": "11",
+  "category": "Nueva Categoría",
+  "createdAt": {
+    "$date": "2025-02-28T16:26:38.060Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T16:29:40.623Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1e674d286d93b4c923020"
+  },
+  "name": "Tech Solutions",
+  "manager": "Alice Smith",
+  "impactLevel": "High",
+  "yearsOfExperience": "10",
+  "category": "Technology",
+  "createdAt": {
+    "$date": "2025-02-28T16:38:12.345Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T16:38:12.345Z"
+  }
+}]

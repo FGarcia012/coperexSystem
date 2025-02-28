@@ -6,6 +6,7 @@ import helmet from "helmet"
 import cors from "cors"
 import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/auth.routes.js"
+import companyRoutes from "../src/company/company.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import { createAdminUser } from "../src/utils/createAdminUser.js"
 import { swaggerDocs, swaggerUi } from "./swagger.js"
@@ -21,6 +22,7 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use("/coperex/v1/auth", authRoutes)
+    app.use("/coperex/v1/company", companyRoutes)
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 

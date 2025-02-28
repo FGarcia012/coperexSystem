@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "fa0c1931-7b65-44d6-b99d-0e0d479fbf5a",
+		"name": "coperexSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37658894"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "AdminRegister",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Daniel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Sacol",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "danit00",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dsacol-2023565@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "StrongPassword123!",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/alexa/OneDrive/Escritorio/Personal/astronauta.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "87654321",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminLogin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@kinal.edu.gt\",\r\n  \"password\": \"AdminPassword123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Companys",
+			"item": [
+				{
+					"name": "addCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhaWQiOiI2N2MxNGQxYjlhZWJlMGI2MmE3YTY2ZDQiLCJpYXQiOjE3NDA3NTk3ODksImV4cCI6MTc0MDc2MzM4OX0.3zYX7kuZdkbUbz9J7xuuCqiEzZZ66_Kb-QCch5_vrBY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tech Solutions\",\r\n  \"manager\": \"Alice Smith\",\r\n  \"impactLevel\": \"High\",\r\n  \"yearsOfExperience\": \"10\",\r\n  \"category\": \"Technology\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/company/addCompany",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"company",
+								"addCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhaWQiOiI2N2MxNGQxYjlhZWJlMGI2MmE3YTY2ZDQiLCJpYXQiOjE3NDA3NTk3ODksImV4cCI6MTc0MDc2MzM4OX0.3zYX7kuZdkbUbz9J7xuuCqiEzZZ66_Kb-QCch5_vrBY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nuevo Nombre\",\r\n  \"manager\": \"Nuevo Manager\",\r\n  \"impactLevel\": \"Nuevo Impact Level\",\r\n  \"yearsOfExperience\": \"11\",\r\n  \"category\": \"Nueva Categoría\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005 /coperex/v1/company/updateCompany/67c1e3be39aa68f9f2d3d066",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005 ",
+							"path": [
+								"coperex",
+								"v1",
+								"company",
+								"updateCompany",
+								"67c1e3be39aa68f9f2d3d066"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompany",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/company/getCompanys",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"company",
+								"getCompanys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompanyCategoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filterBy\": \"category\",\r\n    \"filterValue\": \"Technology\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/company/getCompanys",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"company",
+								"getCompanys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompanyName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sortBy\": \"name\",\r\n    \"order\": \"asc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/company/getCompanys",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"company",
+								"getCompanys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompanyYears",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sortBy\": \"yearsOfExperience\",\r\n    \"order\": \"desc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/coperex/v1/company/getCompanys",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"coperex",
+								"v1",
+								"company",
+								"getCompanys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
